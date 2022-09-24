@@ -20,6 +20,7 @@ class ForgotPasswordController extends Controller
 
         
         $data['code'] = mt_rand(100000, 999999); // produce an new random code
+        $data['created_at'] = now(); // get current created date
 
         
         $codeData = ResetCodePassword::create($data); // create a new database entry
